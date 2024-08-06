@@ -1,0 +1,457 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    overflow-x: hidden;
+}
+.container{
+    display: grid;
+    overflow: auto;
+    grid-template-columns: 200px 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas: "sidebar header header header"
+                          "sidebar main main main"
+                          "sidebar main main main";
+    height: 100vh;
+    transform: all 5s;
+}
+/* nav */
+nav{
+    grid-area: header;
+    height: 70px;
+    background-color: rebeccapurple;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    z-index: 99;
+    box-shadow: 0px 0px 5px white,
+                0px 0px 5px white;
+    font-weight: lighter;
+    color: white;
+}
+nav .logo{
+    width: 50px;
+    height: 50px;
+}
+nav .logo img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+nav .bars{
+    font-size: 1px;
+    display: none;
+}
+nav .bars i{
+    font-size: 30px;
+    cursor:default;
+}
+nav .other{
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .profile .me{
+    text-transform: capitalize;
+
+}
+nav .profile:hover>.menu{
+    display: flex;
+}
+.navs i{
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 50%;
+}
+.navs i sup{
+    color: orangered;
+}
+.profile{
+     position: relative; 
+     display: inline-block;
+}
+.profile .menu{
+    width: max-content;
+    margin-top: 5px;
+    position: absolute;
+    background-color: white;
+    box-shadow: 2px 2px 5px rebeccapurple;
+    color: rebeccapurple;
+    border-radius: 5px;
+    display: none;
+    padding: 20px 5px;
+    flex-direction: column;
+}
+.profile .menu span{
+    padding: 10px 10px;
+}
+.profile .menu span:hover{
+    background-color: rebeccapurple;
+    color: whitesmoke;
+}
+.menu .triangle{
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 20px solid #fff;
+}
+
+/* container */
+.container .left{
+    grid-area: sidebar;
+    height: 100%;
+    scrollbar-width: none;
+    overflow: auto;
+    background-color: rebeccapurple;
+    padding: 30px 0 0 10px;
+    transition: 5s;
+}
+.show{
+    transition: 5s;
+        display: inline !important;
+        position: absolute;
+        z-index: 1000 !important;
+}
+ .left .company{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    border-bottom: 2px solid white;
+    padding:0 10px 20px;
+
+}
+.left .company span{
+    display: none;
+}
+   .left ul{
+    position: relative;
+    padding-top: 20px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 10px;
+}
+.left ul a{
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+}
+.left ul a li{
+    width: 100%;
+    list-style: none;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px 10px 10px 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: 1s;
+}
+.left ul a:hover{
+    background-color:rgb(223, 219, 228);
+  box-shadow: 1px 1px 3px rgb(223, 219, 228);
+    color: rebeccapurple;
+}
+.left ul a.logOut{
+    font-weight: 400;
+    position: absolute;
+    width: 90%;
+    bottom: 2%;
+    right: 0;
+}
+.left ul a{
+    text-decoration: none;
+    color: white; 
+} 
+.left ul a#active{
+    background-color:rgb(223, 219, 228);
+    box-shadow: 1px 1px 3px rgb(223, 219, 228);
+      color: rebeccapurple;  
+}
+
+
+/* main */
+.container .right{
+    grid-area: main;
+    width: 100%;
+    overflow-x: auto;
+    padding: 30px 15px 0 15px; 
+    color: black;
+}
+.right h3.title{
+    font-size: 25px;
+}
+
+/* D  A  S  H   B  O  A  R  D */
+.container .right .analytics{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.container .right .analytics section{
+    padding: 15px;
+    width: 48%;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 0 10px whitesmoke,
+                2px 2px 10px rebeccapurple;
+    border-radius: 5px;
+}
+.container .right .analytics section>div{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+.container .right .analytics section>div>div{
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+    gap: 10px;
+}
+.tableWrapper{ 
+    width: 100%;
+    background-color: whitesmoke;
+    padding-top: 30px;
+}
+ .tableWrapper .title{
+    padding: 10px;
+    font-size: 20px;
+
+}
+ .tableWrapper table{
+    width: 100%;
+    background-color: whitesmoke;
+    text-align: center;
+    border: 1px solid black;
+   
+}
+.tableWrapper table,
+.tableWrapper table th, 
+.tableWrapper table td{
+    border-right: 2px solid black;
+    border-collapse: collapse;
+    border-bottom: 2px solid black;
+    padding: 10px;
+}
+.tableWrapper table tr td.success{
+    background-color: green;
+}
+.tableWrapper table tr td.pending{
+    background-color: red;
+}
+.right .analytic{
+     width: 100%;
+    display: flex;
+    flex-shrink: 0;
+    flex-basis: 1;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.charts{
+    width: 100%;
+    display: flex;
+    gap: 100px;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.chart{
+     width: 100%; 
+}
+ footer{
+    /* position: relative; */
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px 15px 15px;
+    background-color: rgba(0,0,0,0.3);
+}
+footer cite{
+    color: white;
+    
+}
+
+
+
+/* P  R  O D  U   C   T   S   E   C   T   I    O     N */
+
+.container .right .content{
+    width: 100%;
+    margin-top: 20px;
+   margin-bottom: 50px;
+}
+.container .right .content .top{
+    position: sticky;
+    z-index: 100;
+    top:-4.5vh;
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 25vw;
+}
+.container .right .content .top button.add{
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    background-color: rebeccapurple;
+    border-radius: 10px;
+    color: white;
+}
+.top .search{
+    display: flex;
+    position: relative;
+    width: 1000px;
+    gap: 20px;
+}
+.top .search .scan{
+    /* position: relative; */
+    width: 100%;
+    /* background-color: red; */
+    color: rebeccapurple;
+    border: 2px solid rebeccapurple;
+    border-radius: 10px;
+}
+.top .search .scan button{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    border: 1px solid white;
+     width: 20%;
+    color: white;
+    padding: 11px;
+    text-align: center;
+    background-color: rebeccapurple;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.top .search .scan input{
+    width: 80%;
+    background: transparent;
+    padding: 10px 0 10px 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: none;
+    color: rebeccapurple;
+    font-weight: 500;
+    outline: none;
+    font-size: larger;
+    font-weight: lighter;
+}
+.content section{
+    width: 100%;
+    overflow-x: scroll;
+    margin-top: 30px;
+    background: ghostwhite;
+}
+.content section table{
+     width: 100%;
+    overflow-x: scroll;
+}
+.content section table tr{
+    width: 100%;
+}
+.content table,
+.content table tr th,
+.content table tr td{
+    border-right: 2px solid rebeccapurple;
+    border-collapse: collapse;
+    border-bottom: 2px solid rebeccapurple;
+}
+.content table tr th{
+    padding-bottom: 10px;
+}
+.content table tr td{
+    height: 100px;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: lighter;
+}
+.content section table tr td:nth-child(3){
+    /* width: 40%; */
+    text-align: left;
+
+}
+.content section table tr th input[type='checkbox']{
+    transform: scale(4);
+    accent-color: rebeccapurple;
+}
+.content section table tr td img{
+    width: 150px;
+}
+.content section table tr td:nth-child(6) button:nth-child(1){
+   border: 2px solid rebeccapurple;
+   margin-right: 10px;
+}
+.content section table tr td.action a button{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+.content section table tr td.action a button:nth-child(2){
+    background-color: red;
+    color: white;
+}
+
+/* ADD PRODUCT SECTOR */
+
+.right .content .editor{
+    width: 80%;
+    margin-top: 30px;
+    background-color: whitesmoke;
+    height: 100%;
+    margin-left: 10%;
+    border-radius: 10px;
+}
+.right .content .editor form{
+    padding: 20px;
+    
+}
+.right .content .editor form .wrap{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    font-weight: 100;
+    opacity: 0.5;
+}
+.right .content .editor form .wrap input, textarea{
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+}
+.right .content .editor form .wrap .imageWrap{
+    width: 100%;
+    border: 2px dashed black;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.right .content .editor form .wrap .imageWrap:hover{
+    background: rgb(131, 131, 221);
+}
+input[type='file']{
+    cursor: pointer;
+}
+input[type='number']{
+    width: 200px;
+}

@@ -1,0 +1,91 @@
+@media screen and (max-width: 1000px) {
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr 3fr;
+        grid-template-areas: "header"
+                              "main";
+    }
+    .container .left{
+        display: none;
+    }
+    nav .logo{
+        display: none;
+    }
+    nav .bars{
+        display: inline;
+    }
+    .left .company{
+        justify-content: space-between;
+    }
+    .left .company span{
+        display: block;
+    }
+
+    /* product section */
+    .content section {
+        width: 100%;
+        overflow-x: scroll;
+    }
+    .content .top .search form input{
+        width: 100%;
+    }
+    .content section table{
+        overflow-x: scroll;
+    }
+ .content section table tr td:nth-child(3){
+        width: 25%;
+    }
+    .right .content .editor{
+        margin-left: 0;
+        width: 100%;
+    }
+    .right .content .top .search{
+        display: flex;
+        position: relative;
+        width: 100%;
+        background-color: blue;
+        gap: 20px;
+    }
+}
+@media screen and (max-width: 730px) {
+    /* nav .other .navs span{
+        display: none;
+    } */
+    /* nav .search{
+        width: 40%;
+    } */
+    .profile .menu{
+        left: -200%;
+        width: 500px;
+        display: flex;
+    }
+    .charts{
+        display: flex;
+        width: 100%;
+        flex-direction: column; 
+    }
+
+    /* product section */
+    .content section table tr td{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 100px;
+    }
+}
+@media screen and (max-width:460px) {
+     nav .other .navs span{
+        display: none;
+    }
+    .container .right .analytics section{
+        padding: 15px;
+        width: 100%;
+    }
+    .tableWrapper table{
+        width: 100%;
+        overflow-x: scroll;
+    }
+    nav .search{
+        display: none;
+    }
+}
